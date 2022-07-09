@@ -133,6 +133,17 @@ secretsdump.py -hashes :669556eda1adbb10afdf29f42760db39 Administrator@EVILDC1.e
 For this case, we need to know what Enrollment Agents are, they are users who can enroll a certificate on behalf of another user.
 The issued certificate from ESC3 vulnerable template allows to request another certificate on behalf of any user (it means that it is possible to impersonate any user). This is because the the certificate template defines the Certificate Request Agent EKU. The CertificateRequest Agent OID (1.3.6.1.4.1.311.20.2.1) allows for requesting other certificatetemplates on behalf of other principals.
 
+Also, in order to abuse this missconfiguration, a CAs requires at least two templates matching this requirements:
+ Condition 1 :
+  *  A template allows a low-privileged user to enroll in an enrollment agent certificate
+  *  That the Approval Manager is disabled.
+  *  Authorized signatures are not required.
+  *  The certificate template defines the Certificate Request Agent EKU. The Certificate Request Agent OID (1.3.6.1.4.1.311.20.2.1) allows for requesting other certificate templates on behalf of other principals.
+
+  Condition 1 :
+  * Another template permits a low privileged user to use the enrollment agent certificate to request a certificate on behalf of another user, and the template defines an EKU that allows for domain authentication.
+
+
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC3.png?raw=true)
 
 <a name="ECS4"></a>
