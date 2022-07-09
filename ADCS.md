@@ -200,7 +200,10 @@ Weak permissions (Excessive Access rights) can allow non-privileged users to edi
 
 ACLS: The rights we care about are:
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ACLS4.png?raw=true)
+
+<p align="center">
+  <img src="https://github.com/RayRRT/ADCS/blob/main/ACLS4.png?raw=true)" />
+</p>
 
 Example of certifcate template with overly permissive ACLs:
 
