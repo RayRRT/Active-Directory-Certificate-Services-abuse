@@ -2,7 +2,7 @@ During the last week, I wanted to read more in depth about Active Directory Cert
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
   
  
- <h2 align="center" id="heading">Active Directory Certification Services</h2>
+ <h2 align="center" id="heading">Active Directory Certification Services:</h2>
 
                                                
                                                
@@ -29,7 +29,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 
-## Certificate Templates:
+ <h2 align="center" id="heading">Certificate Templates:</h2>
                                                
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
@@ -52,7 +52,7 @@ Performing a correct configuration, not only on the own CA, also of the properti
 In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
 
 
-## ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA
+<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3>
                                         
 In order to be able to abuse this configuration, a series of requirements are needed, before listing them, it is important to define what the SAN is:
 Subject  Alternative  Name  (SAN)  is  an  extension  to  X.509  that  allows various identities to be bound to a certificate beyond the subject;
