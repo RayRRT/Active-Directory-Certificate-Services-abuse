@@ -22,6 +22,8 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 * CSR (Certificate Signing Request) — a message sent to a CA to request a signed certificate.
 * EKU (Extended/Enhanced Key Usage) — one or more object identifiers (OIDs) that define how a certificate can be used.
 
+![tEST]([http://url/to/img.png](https://github.com/RayRRT/ADCS/blob/main/assets/1AD%20CS.png))
+
 
 
 
