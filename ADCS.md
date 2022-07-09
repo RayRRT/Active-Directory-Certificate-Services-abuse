@@ -14,7 +14,7 @@ You won't find anything new here, I simply wanted to understand how this technol
 7. [ESC5: Vulnerable PKI Object Access Control](#ECS5)
 8. [ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set](#ECS6)
 9. [ESC7: Vulnerable Certificate Authority Access Control](#ECS7)
-10.[ESC8: NTLM Relay to AD CS HTTP Endpoints](#ECS8)
+11. [ESC8: NTLM Relay to AD CS HTTP Endpoints](#ECS8)
 
 
 <a name="ADCS"></a>
