@@ -6,7 +6,7 @@ You won't find anything new here, I simply wanted to understand how this technol
 
 <h2 align="center" id="heading">Index of /</h2>
 
-1. [Active Directory Certification Services](#ADCS)
+1. [Active Directory Certification Services](#ADCS)<h2 align="center" id="heading">Index of /</h2>
 2. [Certificate Templates](#CT)
 3. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ECS1)
 4. [ESC2: Certificate template can be used for any purpose](#ECS2)
