@@ -8,7 +8,6 @@ You won't find anything new here, I simply wanted to understand how this technol
     1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 
-## This is the introduction <a name="introduction"></a>
 # Table of contents
 1. [Active Directory Certification Services](#caca)
 2. [Certificate Templates](#caca2)
