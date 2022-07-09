@@ -2,7 +2,13 @@
 
 During the last week, I wanted to read more in depth about Active Directory Certification Services, so I started to work and read the awesome paper from Specter Ops, as well as other articles which I will refer to through this post.
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
+# Table of contents
+1. [Introduction](#introduction)
+2. [Some paragraph](#paragraph1)
+    1. [Sub paragraph](#subparagraph1)
+3. [Another paragraph](#paragraph2)
 
+## This is the introduction <a name="introduction"></a>
 # Table of contents
 1. [Active Directory Certification Services](#caca)
 2. [Certificate Templates](#caca2)
@@ -39,7 +45,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 <br></br>
- <h2 align="center" id="heading">Certificate Templates:</h2><a name="#caca2"></a>
+ <h2 align="center" id="heading">Certificate Templates:</h2><a name="#introduction"></a>
                                              
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
