@@ -48,7 +48,18 @@ In a template you can define things like:
 
 Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
 
-In the fantastic whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
+In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
 
 
+                                        ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA
+                                        
+In order to be able to abuse this configuration, a series of requirements are needed, before listing them, it is important to define what the SAN is:
+Subject  Alternative  Name  (SAN)  is  an  extension  to  X.509  that  allows various identities to be bound to a certificate beyond the subject;
+
+By default during certificate-based authentication, certificates are mapped to Active Directory accounts based on a user principal name (UPN) specified in the SAN;
+So, when a certificate template allows requester to specify a SAN, it is possible to request a certificate for another user;
+
+It can be used for privileges escalation if the certificate template defines EKUs that enable domain authentication and can be enrolled by non- privileged user without manager approval.
+The certificate template’s AD object specifies if the requester can specify the SAN in its mspki-certificate-name-flag property. The mspki-certificate-name-flag property is a bitmask and if the CT_FLAG_ENROLLEE_SUPPLIES_SUBJECT flag is present, a requester can specify the SAN:
+                                        
 
