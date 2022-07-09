@@ -102,14 +102,15 @@ The certificate template’s AD object specifies if the requester can specify th
 <br></br>
 <h3 align="center" id="heading">ESC2: Certificate template can be used for any purpose:</h3>
 
-In this case, the same requirements are needed as in ESC1, but with the variant that the template specifies the EKU Any Purpose, or no EKU, the certificate can be used for anything:
+In this case, the same requirements are needed as in ESC1, but with the variant that the template specifies the EKU Any Purpose, or no EKU, the certificate can be used for anything.
+It can be abuse in other ways, such as code signing, server authentication, or in the same way we will see in ESC3, to request another certificate on behalf of any other user.
 
 Requirements:
 
 * The Enterprise CA grants low-privileged users enrollment rights. Details are the same as in ESC1.
-* Manager approval is disabled. Details are the same as in ESC1.
-* No authorized signatures are required. Details are the same as in ESC1.
-* An overly permissive certificate template security descriptor grants certificate enrollment rights to low-privileged users. Details are the same as in ESC1.
+* No manager approval.
+* No authorized signatures are required. 
+* An overly permissive certificate template security descriptor grants certificate enrollment rights to low-privileged users.
 * The certificate template defines the Any Purpose EKU or no EKU
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC2.png?raw=true)
