@@ -39,7 +39,8 @@ In a template you can define things like:
 * How is the subject specified?
 * …
 
-                                               
+
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)                                             
 
 
 
