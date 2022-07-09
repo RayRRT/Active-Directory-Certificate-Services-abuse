@@ -1,6 +1,5 @@
 During the last week, I wanted to read more in depth about Active Directory Certification Services, so I started to work and read the awesome paper from Specter Ops, as well as other articles which I will refer to through this post.
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
-<br></br>
 
  
  <h2 align="center" id="heading">Active Directory Certification Services:</h2>
@@ -25,10 +24,9 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 * Certificate Template — a collection of settings and policies that defines the contents of a certificate issued by an enterprise CA.
 * CSR (Certificate Signing Request) — a message sent to a CA to request a signed certificate.
 * EKU (Extended/Enhanced Key Usage) — one or more object identifiers (OIDs) that define how a certificate can be used.
-
-
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 <br></br>
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
+
 
  <h2 align="center" id="heading">Certificate Templates:</h2>
  <br></br>                                              
@@ -45,7 +43,7 @@ In a template you can define things like:
 * How is the subject specified?
 * …
 
-<br></br>
+
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)   ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate2.png?raw=true)                                            
 <br></br>
 Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
