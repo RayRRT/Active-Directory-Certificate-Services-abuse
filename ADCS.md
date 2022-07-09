@@ -2,11 +2,19 @@
 
 During the last week, I wanted to read more in depth about Active Directory Certification Services, so I started to work and read the awesome paper from Specter Ops, as well as other articles which I will refer to through this post.
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
+<br></br>
 
 # Table of contents
 1. [Active Directory Certification Services](#ADCS)
 2. [Certificate Templates](#CT)
 3. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ECS1)
+4. [ESC2: Certificate template can be used for any purpose](#ECS2)
+5. [ESC3: Misconfigured Enrollment Agent Templates](#ECS3)
+6. [ESC4: Vulnerable Certificate Template Access Control](#ECS4)
+7. [ESC5: Vulnerable PKI Object Access Control](#ECS5)
+8. [ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set](#ECS6)
+9. [ESC7: Vulnerable Certificate Authority Access Control](#ECS7)
+10.[ESC8: NTLM Relay to AD CS HTTP Endpoints](#ECS8)
 
 
 
@@ -36,9 +44,9 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
-
+<a name="CT"></a>
 <br></br>
- <h2 align="center" id="heading">Certificate Templates:</h2><a name="CT"></a>
+ <h2 align="center" id="heading">Certificate Templates:</h2>
                                              
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
@@ -60,9 +68,9 @@ In a template you can define things like:
 Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
 
 In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
-
+<a name="ECS1"></a>
 <br></br>
-<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3><a name="ECS1"></a>
+<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3>
 
 
 In order to be able to abuse this configuration, a series of requirements are needed, before listing them, it is important to define what the SAN is:
@@ -90,4 +98,23 @@ The certificate template’s AD object specifies if the requester can specify th
  csecretsdump.py -hashes :669556eda1adbb10afdf29f42760db39 Administrator@EVILDC1.evilcorp.local -just-dc-user krbtgt
  
 ```
+<br></br>
+<h3 align="center" id="heading">ESC2: Certificate template can be used for any purpose:</h3><a name="ECS2"></a>
 
+<br></br>
+<h3 align="center" id="heading">ESC3: Misconfigured Enrollment Agent Templates:</h3><a name="ECS3"></a>
+
+<br></br>
+<h3 align="center" id="heading">ESC4: Vulnerable Certificate Template Access Control:</h3><a name="ECS4"></a>
+
+<br></br>
+<h3 align="center" id="heading">ESC5: Vulnerable PKI Object Access Control:</h3><a name="ECS5"></a>
+
+<br></br>
+<h3 align="center" id="heading">ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set:</h3><a name="ECS6"></a>
+
+<br></br>
+<h3 align="center" id="heading">ESC7: Vulnerable Certificate Authority Access Control:</h3><a name="ECS7"></a>
+
+<br></br>
+<h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3><a name="ECS8"></a>
