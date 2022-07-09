@@ -232,6 +232,18 @@ certipy template 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -templ
 <br></br>
 <h3 align="center" id="heading">ESC5: Vulnerable PKI Object Access Control:</h3>
 
+Several objects outside of certificate templates and the certificate authority itself can have a security impact on the entire AD CS system:
+
+* The CA server’s AD computer object 
+* The CA server’s RPC/DCOM server
+* Any descendant AD object or container in the container CN=Public Key Services, CN=Services, CN=Configuration, DC=demo, DC=local (e.g., the Certificate Templates container, Certification Authorities container, the NTAuthCertificates object, the Enrollment Services Container, etc…)
+* If a low-privileged attacker can gain control over any of these, the attack can likely compromise the PKI system. 
+
+In case of gaining control over the NTAuthCertificates object, a CA certificates could be generated and added to this object, take a look [ForgeCert](https://github.com/GhostPack/ForgeCert) tool from Benjamin Delpy.
+
+
+
+
 <a name="ECS6"></a>
 <br></br>
 <h3 align="center" id="heading">ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set:</h3>
