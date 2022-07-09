@@ -40,7 +40,7 @@ In a template you can define things like:
 * …
 
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)                                             
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)  ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate2.png?raw=true)                                            
 
 
 
