@@ -17,10 +17,10 @@ You won't find anything new here, I simply wanted to understand how this technol
 10.[ESC8: NTLM Relay to AD CS HTTP Endpoints](#ECS8)
 
 
-
+<a name="ADCS"></a>
 <br></br>
 <a name="Active Directory Certification Services"></a>
- <h2 align="center" id="heading">Active Directory Certification Services:</h2><a name="ADCS"></a>
+ <h2 align="center" id="heading">Active Directory Certification Services:</h2>
 
 
 Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
@@ -98,23 +98,30 @@ The certificate template’s AD object specifies if the requester can specify th
  csecretsdump.py -hashes :669556eda1adbb10afdf29f42760db39 Administrator@EVILDC1.evilcorp.local -just-dc-user krbtgt
  
 ```
+<a name="ECS2"></a>
 <br></br>
-<h3 align="center" id="heading">ESC2: Certificate template can be used for any purpose:</h3><a name="ECS2"></a>
+<h3 align="center" id="heading">ESC2: Certificate template can be used for any purpose:</h3>
 
+<a name="ECS3"></a>
 <br></br>
-<h3 align="center" id="heading">ESC3: Misconfigured Enrollment Agent Templates:</h3><a name="ECS3"></a>
+<h3 align="center" id="heading">ESC3: Misconfigured Enrollment Agent Templates:</h3>
 
+<a name="ECS4"></a>
 <br></br>
-<h3 align="center" id="heading">ESC4: Vulnerable Certificate Template Access Control:</h3><a name="ECS4"></a>
+<h3 align="center" id="heading">ESC4: Vulnerable Certificate Template Access Control:</h3>
 
+<a name="ECS5"></a>
 <br></br>
-<h3 align="center" id="heading">ESC5: Vulnerable PKI Object Access Control:</h3><a name="ECS5"></a>
+<h3 align="center" id="heading">ESC5: Vulnerable PKI Object Access Control:</h3>
 
+<a name="ECS6"></a>
 <br></br>
-<h3 align="center" id="heading">ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set:</h3><a name="ECS6"></a>
+<h3 align="center" id="heading">ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set:</h3>
 
+<a name="ECS7"></a>
 <br></br>
-<h3 align="center" id="heading">ESC7: Vulnerable Certificate Authority Access Control:</h3><a name="ECS7"></a>
+<h3 align="center" id="heading">ESC7: Vulnerable Certificate Authority Access Control:</h3>
 
+<a name="ECS8"></a>
 <br></br>
-<h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3><a name="ECS8"></a>
+<h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3>
