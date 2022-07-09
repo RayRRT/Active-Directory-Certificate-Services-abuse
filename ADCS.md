@@ -4,20 +4,14 @@ During the last week, I wanted to read more in depth about Active Directory Cert
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
 
 # Table of contents
-1. [Introduction](#introduction)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
-
-
-# Table of contents
-1. [Active Directory Certificate Services](#Active Directory Certification Services)
+1. [#Active Directory Certification Services](#introduction)
 2. [Certificate Templates](#Certificate Templates)
 3. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA)
 
+
 <br></br>
 <a name="Active Directory Certification Services"></a>
- <h2 align="center" id="heading">Active Directory Certification Services:</h2><a name="introduction"></a>
+ <h2 align="center" id="heading">Active Directory Certification Services:</h2><a name="#Active Directory Certification Services"></a>
 
 
 Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
@@ -43,8 +37,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 <br></br>
-<a name="Certificate Templates"></a>
- <h2 align="center" id="heading">Certificate Templates:</h2>
+ <h2 align="center" id="heading">Certificate Templates:</h2><a name="#Certificate Templates"></a>
                                              
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
@@ -68,8 +61,7 @@ Performing a correct configuration, not only on the own CA, also of the properti
 In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
 
 <br></br>
-<a name="ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA"></a>
-<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3>
+<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3><a name="ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA"></a>
 
 
 In order to be able to abuse this configuration, a series of requirements are needed, before listing them, it is important to define what the SAN is:
