@@ -5,7 +5,7 @@ You won't find anything new here, I simply wanted to understand how this technol
 
 # Table of contents
 1. [Active Directory Certification Services](#caca)
-2. [Certificate Templates](#Certificate Templates)
+2. [Certificate Templates](#caca2)
 3. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA)
 
 
@@ -39,7 +39,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 <br></br>
- <h2 align="center" id="heading">Certificate Templates:</h2><a name="#Certificate Templates"></a>
+ <h2 align="center" id="heading">Certificate Templates:</h2><a name="#caca2"></a>
                                              
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
