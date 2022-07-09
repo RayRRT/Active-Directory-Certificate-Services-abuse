@@ -151,6 +151,9 @@ Example of a template that matches Condition 1:
   * The certificate template defines an EKU that allows for domain authentication.
   * Enrollment agent restrictions are not implemented on the CA.
 
+Example of a template that matches Condition 1:
+
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC3C2.png?raw=true)
 
 
 <a name="ECS4"></a>
