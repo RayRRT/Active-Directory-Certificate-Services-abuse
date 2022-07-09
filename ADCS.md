@@ -1,11 +1,10 @@
 During the last week, I wanted to read more in depth about Active Directory Certification Services, so I started to work and read the awesome paper from Specter Ops, as well as other articles which I will refer to through this post.
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
 
- 
+
  <h2 align="center" id="heading">Active Directory Certification Services:</h2>
-<br></br>
-                                               
-                                               
+
+
 Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
 
 
@@ -24,12 +23,13 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 * Certificate Template — a collection of settings and policies that defines the contents of a certificate issued by an enterprise CA.
 * CSR (Certificate Signing Request) — a message sent to a CA to request a signed certificate.
 * EKU (Extended/Enhanced Key Usage) — one or more object identifiers (OIDs) that define how a certificate can be used.
-<br></br>
+
+
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 
  <h2 align="center" id="heading">Certificate Templates:</h2>
- <br></br>                                              
+                                             
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
 There is only one set of templates, and they are stored in Active Directory for the entire forest. Each Enterprise CA server in the forest uses the same set of templates, regardless of domain or subdomain membership. However, this doesn’t mean you have to enable the same set of templates on all Enterprise CA servers. Instead, you can enable different templates on each Enterprise CA server.
@@ -45,14 +45,16 @@ In a template you can define things like:
 
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)   ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate2.png?raw=true)                                            
-<br></br>
+
+
 Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
 
 In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
 
 
 <h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3>
-<br></br>                                     
+
+
 In order to be able to abuse this configuration, a series of requirements are needed, before listing them, it is important to define what the SAN is:
 Subject  Alternative  Name  (SAN)  is  an  extension  to  X.509  that  allows various identities to be bound to a certificate beyond the subject;
 
