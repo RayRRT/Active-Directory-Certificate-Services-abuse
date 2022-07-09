@@ -252,7 +252,7 @@ If EDITF_ATTRIBUTESUBJECTALTNAME2 flag is enabled on an enterprise CA, alternati
 
 *It is strongly recommended not to enable the EDITF_ATTRIBUTESUBJECALTNAME2 flag on an enterprise CA. If this is enabled, alternative names are allowed for any Certificate Template issued, regardless of how the subject of the certificate is determined according to the Certificate Template. Using this feature, a malicious user could easily generate a certificate with an alternative name that would allow them to impersonate another user. For example, depending on the issuance requirements, it may be possible for a malicious user to request a new certificate valid for smart card logon and request a SAN which contains the UPN of a different user. Since smart card logon uses UPN mapping by default to map a certificate to a user account, the certificate could be used to log on interactively as a different user, which could be a domain administrator or other VIP account. If this flag is enabled, the CA should be limited to require Certificate Manager approval or limit enrollment permissions to only trusted accounts.*
 
-We can check if this setting is enabled using the following command:
+We can check if this setting is enabled using the following command (since this just is using remote registry, it could also be queried with reg query):
 ```
 certutil -config "CA_HOST\CA_NAME" -getreg "policy\EditFlags"
 ```
