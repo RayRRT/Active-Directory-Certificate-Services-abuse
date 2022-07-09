@@ -23,7 +23,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 * EKU (Extended/Enhanced Key Usage) — one or more object identifiers (OIDs) that define how a certificate can be used.
 
 
-![MarineGEO circle logo](/assets/1ADCS.png "MarineGEO logo")
+![alt text](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 
 
