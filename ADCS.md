@@ -4,7 +4,7 @@ You won't find anything new here, I simply wanted to understand how this technol
                                 
                                 
                                 
-                                               ##Active Directory Certification Services
+                                               Active Directory Certification Services
                                                
                                 
 Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
@@ -26,7 +26,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
-                                               ##Certificate Templates:
+                                               Certificate Templates:
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
 There is only one set of templates, and they are stored in Active Directory for the entire forest. Each Enterprise CA server in the forest uses the same set of templates, regardless of domain or subdomain membership. However, this doesn’t mean you have to enable the same set of templates on all Enterprise CA servers. Instead, you can enable different templates on each Enterprise CA server.
