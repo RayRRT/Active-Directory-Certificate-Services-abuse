@@ -195,7 +195,12 @@ certipy req 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCo
 <br></br>
 <h3 align="center" id="heading">ESC4: Vulnerable Certificate Template Access Control:</h3>
 
+Certificates templates are AD objects, so they have security descriptor, that defines which permissiones AD principals have over the template
+Weak permissions (Excessive Access rights) can allow non-privileged users to edit sensitive security settings in the template ( defines EKUs, allows SAN, disable manager approval), thereby making its vulnerable to the ESC1-3 technique.
 
+ACLS: The rights we care about are:
+
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC4.png?raw=true)
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC4.png?raw=true)
 
 How to abuse:
