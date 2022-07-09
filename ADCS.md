@@ -1,18 +1,19 @@
 During the last week, I wanted to read more in depth about Active Directory Certification Services, so I started to work and read the awesome paper from Specter Ops, as well as other articles which I will refer to through this post.
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.  
-  
-  
-  
-  
+
+
                                                Active Directory Certification Services
                                                
-                                
+                                               
 Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
+
 
 This server Role, was introduced in Windows Server 2008, It is not installed by default, but is widely used.
 It is not easy to perform a correct configuration, so may be encountered environments with serious misconfigurations.
 
+
 To understand this implementation of Public Key Infrastructure within Active Directory, it is important to know some concepts:
+
 
 * PKI (Public Key Infrastructure) — a system to manage certificates/public key encryption.
 * PKINIT - Public Key Cryptography for Initial Authentication in Kerberos Protocol.
@@ -27,11 +28,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 
-
-
-
                                                Certificate Templates:
-                                               
                                                
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
