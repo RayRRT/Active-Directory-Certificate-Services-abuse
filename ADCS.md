@@ -3,7 +3,7 @@
 During the last week, I wanted to read more in depth about Active Directory Certification Services, so I started to work and read the awesome paper from Specter Ops, as well as other articles which I will refer to through this post.
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
 # Table of contents
-1. [Introduction](#introduction)
+1. [Introduction](#caca)
 2. [Some paragraph](#paragraph1)
     1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
@@ -67,7 +67,7 @@ Performing a correct configuration, not only on the own CA, also of the properti
 In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
 
 <br></br>
-<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3><a name="introduction"></a>
+<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3><a name="caca"></a>
 
 
 In order to be able to abuse this configuration, a series of requirements are needed, before listing them, it is important to define what the SAN is:
