@@ -23,7 +23,24 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 * EKU (Extended/Enhanced Key Usage) — one or more object identifiers (OIDs) that define how a certificate can be used.
 
 
-![alt text](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
+
+                                               Certificate Templates:
+                                               
+All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
+There is only one set of templates, and they are stored in Active Directory for the entire forest. Each Enterprise CA server in the forest uses the same set of templates, regardless of domain or subdomain membership. However, this doesn’t mean you have to enable the same set of templates on all Enterprise CA servers. Instead, you can enable different templates on each Enterprise CA server.
+
+But, what is a certificate template?. **The certificates templates are just collections of enrollment policies and predefined certificate settings.**
+
+In a template you can define things like:
+* Validity/ Renewal period
+* Who can request a certificate? For whom?
+* What actions can be carried out with this certificate?
+* How is the subject specified?
+* …
+
+                                               
+
 
 
 
