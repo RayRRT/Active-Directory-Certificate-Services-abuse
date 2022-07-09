@@ -4,10 +4,12 @@ During the last week, I wanted to read more in depth about Active Directory Cert
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
 
 # Table of contents
-1. [Active Directory Certification Services](#introduction)
+1. [Active Directory Certification Services](#Active Directory Certification Services)
 2. [Certificate Templates](#Certificate Templates)
 3. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA)
 
+
+## This is the introduction <a name="introduction"></a>
 
 <br></br>
 <a name="Active Directory Certification Services"></a>
