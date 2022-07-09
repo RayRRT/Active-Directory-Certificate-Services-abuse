@@ -205,7 +205,7 @@ ACLS: The rights we care about are:
 Example of certifcate template with overly permissive ACLs:
 
 <p align="center">
-  <img src="[http://some_place.com/image.png](https://github.com/RayRRT/ADCS/blob/main/ESC4.png?raw=true)" />
+  <img src="http://some_place.com/image.png](https://github.com/RayRRT/ADCS/blob/main/ESC4.png?raw=true)" />
 </p>
 
 
