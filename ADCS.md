@@ -15,7 +15,6 @@ You won't find anything new here, I simply wanted to understand how this technol
 3. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA)
 
 
-## This is the introduction <a name="introduction"></a>
 
 <br></br>
 <a name="Active Directory Certification Services"></a>
