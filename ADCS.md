@@ -248,6 +248,19 @@ In case of gaining control over the NTAuthCertificates object, a CA certificates
 <br></br>
 <h3 align="center" id="heading">ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set:</h3>
 
+If EDITF_ATTRIBUTESUBJECTALTNAME2 flag is enabled on an enterprise CA, alternative names are allowed for any certificate templates, regardless of templates' restrictions itself. Microsoft strongly not to enable this flag on an Enterprise CA:
+
+*It is strongly recommended not to enable the EDITF_ATTRIBUTESUBJECALTNAME2 flag on an enterprise CA. If this is enabled, alternative names are allowed for any Certificate Template issued, regardless of how the subject of the certificate is determined according to the Certificate Template. Using this feature, a malicious user could easily generate a certificate with an alternative name that would allow them to impersonate another user. For example, depending on the issuance requirements, it may be possible for a malicious user to request a new certificate valid for smart card logon and request a SAN which contains the UPN of a different user. Since smart card logon uses UPN mapping by default to map a certificate to a user account, the certificate could be used to log on interactively as a different user, which could be a domain administrator or other VIP account. If this flag is enabled, the CA should be limited to require Certificate Manager approval or limit enrollment permissions to only trusted accounts.*
+
+
+How to abuse:
+
+Almost the same as the ESC1, but here you can choose any certificate template that permits client authentication:
+```
+certipy req 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'User' -alt 'Administrator@EvilCorp.local'
+```
+
+
 <a name="ECS7"></a>
 <br></br>
 <h3 align="center" id="heading">ESC7: Vulnerable Certificate Authority Access Control:</h3>
