@@ -140,11 +140,18 @@ Also, in order to abuse this missconfiguration, a CAs requires at least two temp
   *  Authorized signatures are not required.
   *  The certificate template defines the Certificate Request Agent EKU. The Certificate Request Agent OID (1.3.6.1.4.1.311.20.2.1) allows for requesting other certificate templates on behalf of other principals.
 
-  Condition 1 :
-  * Another template permits a low privileged user to use the enrollment agent certificate to request a certificate on behalf of another user, and the template defines an EKU that allows for domain authentication.
-
+Example of a template that matches Condition 1:
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC3.png?raw=true)
+
+  Condition 2 :
+  * Another template permits a low privileged user to use the enrollment agent certificate to request a certificate on behalf of another user, and the template defines an EKU that allows for domain authentication.
+  * Manager approval is disabled.
+  * The template schema version 1 or is greater than 2 and specifies an Application Policy Issuance Requirement requiring the Certificate Request Agent EKU.
+  * The certificate template defines an EKU that allows for domain authentication.
+  * Enrollment agent restrictions are not implemented on the CA.
+
+
 
 <a name="ECS4"></a>
 <br></br>
