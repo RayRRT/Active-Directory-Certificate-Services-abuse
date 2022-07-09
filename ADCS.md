@@ -49,7 +49,7 @@ In a template you can define things like:
 
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)   ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate2.png?raw=true)                                            
 
-Performing a correct configuration, not only of the CA but also of the properties that define each template is not a fail task, so it is likely to encounter missconfigurations.
+Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
 
 In the fantastic whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
 
