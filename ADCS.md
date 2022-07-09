@@ -12,7 +12,7 @@ You won't find anything new here, I simply wanted to understand how this technol
 
 <br></br>
 <a name="Active Directory Certification Services"></a>
- <h2 align="center" id="heading">Active Directory Certification Services:</h2><a name="#ADCS"></a>
+ <h2 align="center" id="heading">Active Directory Certification Services:</h2><a name="ADCS"></a>
 
 
 Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
@@ -38,7 +38,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 <br></br>
- <h2 align="center" id="heading">Certificate Templates:</h2><a name="#CT"></a>
+ <h2 align="center" id="heading">Certificate Templates:</h2><a name="CT"></a>
                                              
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
