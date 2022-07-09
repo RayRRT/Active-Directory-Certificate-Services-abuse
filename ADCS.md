@@ -1,8 +1,9 @@
 During the last week, I wanted to read more in depth about Active Directory Certification Services, so I started to work and read the awesome paper from Specter Ops, as well as other articles which I will refer to through this post.
 You won't find anything new here, I simply wanted to understand how this technology works and to try the differents cases of abuse against it.
   
-  
-## Active Directory Certification Services
+ 
+ <h3 align="center" id="heading">## Active Directory Certification Services</h3>
+
                                                
                                                
 Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
