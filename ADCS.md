@@ -44,7 +44,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
 
 <br></br>
- <h2 align="center" id="heading">Certificate Templates:</h2><a name="#introduction"></a>
+ <h2 align="center" id="heading">Certificate Templates:</h2><a name="#introducstion"></a>
                                              
                                                
 All Enterprise CA servers issue certificates based on one or more of the certificate templates. You cannot create a new template from scratch.
@@ -68,7 +68,7 @@ Performing a correct configuration, not only on the own CA, also of the properti
 In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
 
 <br></br>
-<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3><a name="ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA"></a>
+<h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3><a name="introduction"></a>
 
 
 In order to be able to abuse this configuration, a series of requirements are needed, before listing them, it is important to define what the SAN is:
