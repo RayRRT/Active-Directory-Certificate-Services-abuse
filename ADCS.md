@@ -8,13 +8,14 @@ You won't find anything new here, I simply wanted to understand how this technol
 
 1. [Active Directory Certification Services](#ADCS)
 2. [Certificate Templates](#CT)
-3. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ECS1)
-4. [ESC2: Certificate template can be used for any purpose](#ECS2)
-5. [ESC3: Misconfigured Enrollment Agent Templates](#ECS3)
-6. [ESC4: Vulnerable Certificate Template Access Control](#ECS4)
-7. [ESC5: Vulnerable PKI Object Access Control](#ECS5)
-8. [ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set](#ECS6)
-9. [ESC7: Vulnerable Certificate Authority Access Control](#ECS7)
+3. [Enumeration](#enumeration)
+4. [ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA](#ECS1)
+5. [ESC2: Certificate template can be used for any purpose](#ECS2)
+6. [ESC3: Misconfigured Enrollment Agent Templates](#ECS3)
+7. [ESC4: Vulnerable Certificate Template Access Control](#ECS4)
+8. [ESC5: Vulnerable PKI Object Access Control](#ECS5)
+9. [ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set](#ECS6)
+10. [ESC7: Vulnerable Certificate Authority Access Control](#ECS7)
 11. [ESC8: NTLM Relay to AD CS HTTP Endpoints](#ECS8)
 12. [CVE-2022-29623](#CVE-2022-29623)
 13. [References](#references)
@@ -71,6 +72,13 @@ In a template you can define things like:
 Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
 
 In the awesome whitepaper of specter ops, we not only find how to abuse these misconfigurations, but also how to steal the certificates, but in this post I wanted to go to the point and test in my environment each of the attacks to understand them a little better.
+
+<a name="enumeration"></a>
+<br></br>
+ <h2 align="center" id="heading">AD CS Enumeration</h2>
+ 
+
+ 
 <a name="ECS1"></a>
 <br></br>
 <h3 align="center" id="heading">ESC1: Misconfigured Certificate Templates Allows requesters to specify a SA:</h3>
@@ -316,7 +324,7 @@ AD CS supports several HTTP-based enrollment methods if additional server roles 
   <img src="https://github.com/RayRRT/ADCS/blob/main/WebEnrollmentRelay.png?raw=true)" />
 </p>
 
-Hot to abuse:
+How to abuse:
 
 NOTE:
 
