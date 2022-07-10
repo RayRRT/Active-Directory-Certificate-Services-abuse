@@ -85,16 +85,16 @@ mspki-certificate-name-fla:
 
 
 Extended Key Usages (EKUs - pkiextendedkeyusage Attribute) :  
-
-1.3.6.1.5.5.7.3.3      : Code Signing                                             
-1.3.6.1.4.1.311.10.3.4 : Encrypting File System                                   
-1.3.6.1.5.5.7.3.4      : Encrypting Mail                                          
-1.3.6.1.4.1.311.20.2.2 : Smart Card Logon                                         
-1.3.6.1.5.5.7.3.2      : Authentication to another server                         
-1.3.6.1.5.2.3.4        : PKINIT Client Authentication (Needs to be added manually)
-1.3.6.1.5.5.7.3        : Server Authentication (Identifying servers)              
-2.5.29.37.0            : Any Porpuse                                              
-
+```
+1.3.6.1.5.5.7.3.3          --> Code Signing                                             
+1.3.6.1.4.1.311.10.3.4     --> Encrypting File System                                   
+1.3.6.1.5.5.7.3.4          --> Encrypting Mail                                          
+1.3.6.1.4.1.311.20.2.2     --> Smart Card Logon                                         
+1.3.6.1.5.5.7.3.2          --> Authentication to another server                         
+1.3.6.1.5.2.3.4            --> PKINIT Client Authentication (Needs to be added manually)
+1.3.6.1.5.5.7.3            --> Server Authentication (Identifying servers)              
+2.5.29.37.0                --> Any Porpuse                                              
+```
 
 
 Certipy can help us quickly enumerate certificate templates, certificate authorities and other configurations, we can export the output in different formats, it is useful to be able to import the results directly into bloodhound (You will need to add [Certipy custom queries](https://github.com/ly4k/Certipy/blob/main/customqueries.json)):
