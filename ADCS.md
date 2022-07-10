@@ -307,3 +307,25 @@ certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilC
 <a name="ECS8"></a>
 <br></br>
 <h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3>
+
+TODO
+
+
+<a name="references"></a>
+<br></br>
+<h3 align="center" id="heading">References:</h3>
+
+* [Certified Pre-Owned - SpecterOps](https://www.specterops.io/assets/resources/Certified_Pre-Owned.pdf)
+* [Hunting for AD CS abuse](
+https://speakerdeck.com/heirhabarov/hunting-for-active-directory-certificate-services-abuse)
+* [AD CS ESC7-Attack](https://www.tarlogic.com/blog/ad-cs-esc7-attack/)
+* [AD CS Manage CA-RCE](https://www.tarlogic.com/blog/ad-cs-manageca-rce/)
+* [NTLM Relaying to AD CS](https://dirkjanm.io/ntlm-relaying-to-ad-certificate-services/)
+
+Tools:
+
+* [Certipy](https://github.com/ly4k/Certipy)
+* [Certify](https://github.com/GhostPack/Certify)
+* [Certi](https://github.com/zer1t0/certi)
+
+
