@@ -309,7 +309,7 @@ certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilC
 <br></br>
 <h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3>
 
-TODO
+TODO -->
 
 
 <a name="references"></a>
