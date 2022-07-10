@@ -76,12 +76,13 @@ In the awesome whitepaper of specter ops, we not only find how to abuse these mi
 <br></br>
  <h2 align="center" id="heading">AD CS Enumeration</h2>
  
-
-pkicertificatetemplate             Specify the template’s schema version
-mspki-enrollment-flag --> Specifies [enrollment flags](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-crtd/ec71fd43-61c2-407b-83c9-b52272dec8a1)Specifies the number of enrollment registration authority signatures that are required in an enrollment request
-mspki-ra-signature:
-mspki-certificate-name-fla: 
-
+```
+     Value                            Definition
+pkicertificatetemplate        -->  	   Specify the template’s schema version
+mspki-enrollment-flag         -->  	   Specifies [enrollment flags](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-crtd/ec71fd43-61c2-407b-83c9-b52272dec8a1)Specifies the number of enrollment registration authority signatures that are required in an enrollment request
+mspki-ra-signature            -->  	   Specifies the number of enrollment registration authority signatures that are required in an enrollment request
+mspki-certificate-name-fla    -->  	   Specifies the [subject name flags](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-crtd/1192823c-d839-4bc3-9b6b-fa8c53507ae1)
+```
 
 
  
