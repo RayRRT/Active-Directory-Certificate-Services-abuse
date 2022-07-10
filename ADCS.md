@@ -84,16 +84,16 @@ mspki-certificate-name-fla:
 
 
 
-                   Extended Key Usages (EKUs - pkiextendedkeyusage Attribute)    
+Extended Key Usages (EKUs - pkiextendedkeyusage Attribute) :  
 
-1.3.6.1.5.5.7.3.3                    |  Code Signing                                             |
-1.3.6.1.4.1.311.10.3.4               |  Encrypting File System                                   |
-1.3.6.1.5.5.7.3.4                    |  Encrypting Mail                                          |
-1.3.6.1.4.1.311.20.2.2               |  Smart Card Logon                                         |
-1.3.6.1.5.5.7.3.2                    |  Authentication to another server                         |
-1.3.6.1.5.2.3.4                      |  PKINIT Client Authentication (Needs to be added manually)|
-1.3.6.1.5.5.7.3                      |  Server Authentication (Identifying servers)              |
-2.5.29.37.0                          |  Any Porpuse                                              |
+1.3.6.1.5.5.7.3.3      : Code Signing                                             
+1.3.6.1.4.1.311.10.3.4 : Encrypting File System                                   
+1.3.6.1.5.5.7.3.4      : Encrypting Mail                                          
+1.3.6.1.4.1.311.20.2.2 : Smart Card Logon                                         
+1.3.6.1.5.5.7.3.2      : Authentication to another server                         
+1.3.6.1.5.2.3.4        : PKINIT Client Authentication (Needs to be added manually)
+1.3.6.1.5.5.7.3        : Server Authentication (Identifying servers)              
+2.5.29.37.0            : Any Porpuse                                              
 
 
 
