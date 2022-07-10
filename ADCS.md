@@ -26,7 +26,7 @@ You won't find anything new here, I simply wanted to understand how this technol
  <h2 align="center" id="heading">Active Directory Certification Services:</h2>
 
 
-Active Directory Certificate Services ( AD CS for the rest of the post), As per Microsoft, AD CS is a “Server Role that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
+Active Directory Certificate Services ( AD CS for the rest of the post), as per Microsoft, is a “**Server Role** that enables you to construct public key infrastructure (PKI) and give open key cryptography, computerized authentication, and advanced mark abilities for your association.”
 
 
 This server Role, was introduced in Windows Server 2008, It is not installed by default, but is widely used.
