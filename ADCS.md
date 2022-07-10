@@ -86,8 +86,9 @@ mspki-certificate-name-fla:
 
  
 ```
-																																									Extended Key Usages (EKUs - pkiextendedkeyusage Attribute) : 
-																																										           Value                      Definition
+Usages (EKUs - pkiextendedkeyusage Attribute) : 
+
+     Value                      Definition
 
 1.3.6.1.5.5.7.3.3        -->  	Code Signing                                             
 1.3.6.1.4.1.311.10.3.4   -->   	Encrypting File System                                   
