@@ -77,7 +77,12 @@ In the awesome whitepaper of specter ops, we not only find how to abuse these mi
 <br></br>
  <h2 align="center" id="heading">AD CS Enumeration</h2>
  
+Certipy can help us quickly enumerate certificate templates, certificate authorities and other configurations, we can export the output in different formats, it is useful to be able to import the results directly into bloodhound (You will need to add [Certipy custom queries](https://github.com/ly4k/Certipy/blob/main/customqueries.json)):
 
+```
+certipy find 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1' -bloodhound
+ ```
+ 
  
 <a name="ECS1"></a>
 <br></br>
