@@ -316,6 +316,8 @@ TODO -->
 <br></br>
 <h3 align="center" id="heading">References:</h3>
 
+Posts and talks:
+
 * [Certified Pre-Owned - SpecterOps](https://www.specterops.io/assets/resources/Certified_Pre-Owned.pdf)
 * [Hunting for AD CS abuse](
 https://speakerdeck.com/heirhabarov/hunting-for-active-directory-certificate-services-abuse)
