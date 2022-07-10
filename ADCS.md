@@ -66,8 +66,7 @@ In a template you can define things like:
 * …
 
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)   ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate2.png?raw=true)                                            
-
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)  
 
 Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
 
@@ -82,7 +81,10 @@ Certipy can help us quickly enumerate certificate templates, certificate authori
 ```
 certipy find 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1' -bloodhound
  ```
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CustomQuery1.png?raw=true)![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CustomQuery2.png?raw=true) 
+ <p align="center">
+  <img src="https://github.com/RayRRT/ADCS/blob/main/ESC6.png?raw=true)](https://github.com/RayRRT/ADCS/blob/main/CustomQuery1.png?raw=true"/>
+</p>
+
  
 <a name="ECS1"></a>
 <br></br>
