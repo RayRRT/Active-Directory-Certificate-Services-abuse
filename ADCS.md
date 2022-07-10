@@ -64,6 +64,8 @@ In a template you can define things like:
 * How is the subject specified?
 * …
 
+An example of certificate template from the windows Certificate Templates Console (certtmlp.msc):
+
 <p align="center">
   <img src="https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)" />
 </p>
