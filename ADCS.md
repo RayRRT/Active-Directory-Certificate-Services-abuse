@@ -80,6 +80,7 @@ In the awesome whitepaper of specter ops, we not only find how to abuse these mi
  The following are the basic attributes to look for in order to find missconfigurations in the certificates templates:
 ```
      Value                            Definition
+     
 pkicertificatetemplate        -->  	   Specify the template’s schema version
 mspki-enrollment-flag         -->  	   Specifies [enrollment flags](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-crtd/ec71fd43-61c2-407b-83c9-b52272dec8a1)Specifies the number of enrollment registration authority signatures that are required in an enrollment request
 mspki-ra-signature            -->  	   Specifies the number of enrollment registration authority signatures that are required in an enrollment request
