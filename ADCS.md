@@ -76,44 +76,25 @@ In the awesome whitepaper of specter ops, we not only find how to abuse these mi
 <br></br>
  <h2 align="center" id="heading">AD CS Enumeration</h2>
  
-+---------------------------------------------------------------------+
-|               Attribute            |           Definition           |
+
+pkicertificatetemplate             Specify the template’s schema version
+mspki-enrollment-flag --> Specifies [enrollment flags](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-crtd/ec71fd43-61c2-407b-83c9-b52272dec8a1)Specifies the number of enrollment registration authority signatures that are required in an enrollment request
+mspki-ra-signature:
+mspki-certificate-name-fla: 
 
 
-+---------------------------------------------------------------------+
 
+                   Extended Key Usages (EKUs - pkiextendedkeyusage Attribute)    
 
-| pkicertificatetemplate             |  Specify the template’s schema version
+1.3.6.1.5.5.7.3.3                    |  Code Signing                                             |
+1.3.6.1.4.1.311.10.3.4               |  Encrypting File System                                   |
+1.3.6.1.5.5.7.3.4                    |  Encrypting Mail                                          |
+1.3.6.1.4.1.311.20.2.2               |  Smart Card Logon                                         |
+1.3.6.1.5.5.7.3.2                    |  Authentication to another server                         |
+1.3.6.1.5.2.3.4                      |  PKINIT Client Authentication (Needs to be added manually)|
+1.3.6.1.5.5.7.3                      |  Server Authentication (Identifying servers)              |
+2.5.29.37.0                          |  Any Porpuse                                              |
 
-
-| mspki-enrollment-flag              |  Specifies [enrollment flags](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-crtd/ec71fd43-61c2-407b-83c9-b52272dec8a1)         
-
-Specifies the number of enrollment registration authority signatures that are required in an enrollment request
-
-
-| mspki-ra-signature                 |
-
-
-| mspki-certificate-name-fla         |
-
-
-+----------------------------------+---------+------------------------+
-
-+----------------------------------+---------+-----------------------------------------------------+
-|                   Extended Key Usages (EKUs - pkiextendedkeyusage Attribute)                     |
-+                                                                                                  +
-+--------------------------------------------------------------------------------------------------+
-|           Value                      |                    Definition                             |
-+--------------------------------------------------------------------------------------------------+
-| 1.3.6.1.5.5.7.3.3                    |  Code Signing                                             |
-| 1.3.6.1.4.1.311.10.3.4               |  Encrypting File System                                   |
-| 1.3.6.1.5.5.7.3.4                    |  Encrypting Mail                                          |
-| 1.3.6.1.4.1.311.20.2.2               |  Smart Card Logon                                         |
-| 1.3.6.1.5.5.7.3.2                    |  Authentication to another server                         |
-| 1.3.6.1.5.2.3.4                      |  PKINIT Client Authentication (Needs to be added manually)|
-| 1.3.6.1.5.5.7.3                      |  Server Authentication (Identifying servers)              |
-| 2.5.29.37.0                          |  Any Porpuse                                              |
-+--------------------------------------------------------------------------------------------------+
 
 
 Certipy can help us quickly enumerate certificate templates, certificate authorities and other configurations, we can export the output in different formats, it is useful to be able to import the results directly into bloodhound (You will need to add [Certipy custom queries](https://github.com/ly4k/Certipy/blob/main/customqueries.json)):
