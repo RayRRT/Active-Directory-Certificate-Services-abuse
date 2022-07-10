@@ -112,18 +112,14 @@ Certipy can help us quickly enumerate certificate templates, certificate authori
 certipy find 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1' -bloodhound
  ```
  
- <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/certiEvidence.png?raw=true"/>
-</p>
-
 Another good tool is [certi](https://github.com/zer1t0/certi) from [@eloypgz](https://twitter.com/eloypgz):
 ```
 python3 certi.py list 'EvilCorp.local/TheHorseman:EvilCorp3.' -k --dc-ip EVILDC1 --vuln --enable | grep ESC1 -B 3
 ```
-
-<p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)" />
+ <p align="center">
+  <img src="https://github.com/RayRRT/ADCS/blob/main/certiEvidence.png?raw=true"/>
 </p>
+
 
 <a name="ECS1"></a>
 <br></br>
