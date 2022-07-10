@@ -82,7 +82,7 @@ Certipy can help us quickly enumerate certificate templates, certificate authori
 ```
 certipy find 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1' -bloodhound
  ```
- 
+ ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)   ![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CustomQuery1.png?raw=true)![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/CustomQuery2.png?raw=true) 
  
 <a name="ECS1"></a>
 <br></br>
