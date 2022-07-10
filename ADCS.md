@@ -16,6 +16,7 @@ You won't find anything new here, I simply wanted to understand how this technol
 8. [ESC6: CA has EDIT_ATTRIBUTESUBJECTALTNAME2 flag set](#ECS6)
 9. [ESC7: Vulnerable Certificate Authority Access Control](#ECS7)
 11. [ESC8: NTLM Relay to AD CS HTTP Endpoints](#ECS8)
+12. [References](#references)
 
 
 <a name="ADCS"></a>
