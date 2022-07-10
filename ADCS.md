@@ -310,7 +310,7 @@ certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilC
 <br></br>
 <h3 align="center" id="heading">ESC8: NTLM Relay to AD CS HTTP Endpoints:</h3>
 
-TODO -->
+AD CS supports several HTTP-based enrollment methods if additional server roles are installed (Certificate enrollment web service):
 
 <a name="CVE-2022-29623"></a>
 <br></br>
