@@ -46,7 +46,7 @@ To understand this implementation of Public Key Infrastructure within Active Dir
 * **EKU** (Extended/Enhanced Key Usage) — one or more object identifiers (OIDs) that define how a certificate can be used.
 
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/1ADCS.png?raw=true)
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/assets/1ADCS.png?raw=true)
 <a name="CT"></a>
 <br></br>
  <h2 align="center" id="heading">Certificate Templates:</h2>
@@ -67,7 +67,7 @@ In a template you can define things like:
 An example of certificate template from the windows Certificate Templates Console (certtmlp.msc):
 
 <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/CertiTemplate1.png?raw=true)" />
+  <img src="https://github.com/RayRRT/ADCS/blob/main/assets/CertiTemplate1.png?raw=true)" />
 </p>
 
 Performing a correct configuration, not only on the own CA, also of the properties that define each template is not a easy task, so it is likely to encounter missconfigurations.
@@ -106,14 +106,14 @@ Usages (EKUs - pkiextendedkeyusage Attribute) :
 ```
 
 
-Certipy can help us quickly enumerate certificate templates, certificate authorities and other configurations, we can export the output in different formats, it is useful to be able to import the results directly into bloodhound (You will need to add [Certipy custom queries](https://github.com/ly4k/Certipy/blob/main/customqueries.json)):
+Certipy can help us quickly enumerate certificate templates, certificate authorities and other configurations, we can export the output in different formats, it is useful to be able to import the results directly into bloodhound (You will need to add [Certipy custom queries](https://github.com/ly4k/Certipy/blob/main/assets/customqueries.json)):
 
 ```
 certipy find 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1' -bloodhound
  ```
  
 <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/CustomQuery1.png?raw=true"/>
+  <img src="https://github.com/RayRRT/ADCS/blob/main/assets/CustomQuery1.png?raw=true"/>
 </p>
 
 
@@ -154,7 +154,7 @@ It can be used for privileges escalation if the certificate template defines EKU
 The certificate template’s AD object specifies if the requester can specify the SAN in its mspki-certificate-name-flag property. The mspki-certificate-name-flag property is a bitmask and if the CT_FLAG_ENROLLEE_SUPPLIES_SUBJECT flag is present, a requester can specify the SAN:
 
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC1.png?raw=true)
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/assets/ESC1.png?raw=true)
 
 * In addition, it is necessary that the enterprise CA's configuration must allow low privileged users the ability to request certificates. 
 * That the Approval Manager is disabled.
@@ -187,7 +187,7 @@ Requirements:
 * An overly permissive certificate template security descriptor grants certificate enrollment rights to low-privileged users.
 * The certificate template defines the Any Purpose EKU or no EKU
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC2.png?raw=true)
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/assets/ESC2.png?raw=true)
 
 
 How to abuse:
@@ -230,7 +230,7 @@ Also, in order to abuse this missconfiguration, a CAs requires at least two temp
 
 Example of a template that matches Condition 1:
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC3.png?raw=true)
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/assets/ESC3.png?raw=true)
 
   Condition 2 :
   * Another template permits a low privileged user to use the enrollment agent certificate to request a certificate on behalf of another user, and the template defines an EKU that allows for domain authentication.
@@ -241,7 +241,7 @@ Example of a template that matches Condition 1:
 
 Example of a template that matches Condition 2:
 
-![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/ESC3C2.png?raw=true)
+![ADCSXMind](https://github.com/RayRRT/ADCS/blob/main/assets/ESC3C2.png?raw=true)
 
 How to abuse:
 
@@ -272,13 +272,13 @@ ACLS: The rights we care about are:
 
 
 <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/ACLS4.png?raw=true)" />
+  <img src="https://github.com/RayRRT/ADCS/blob/main/assets/ACLS4.png?raw=true)" />
 </p>
 
 Example of certifcate template with overly permissive ACLs:
 
 <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/ESC4.png?raw=true)" />
+  <img src="https://github.com/RayRRT/ADCS/blob/main/assets/ESC4.png?raw=true)" />
 </p>
 
 
@@ -327,7 +327,7 @@ We can check if this setting is enabled using the following command (since this 
 certutil -config "CA_HOST\CA_NAME" -getreg "policy\EditFlags"
 ```
 <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/ESC6.png?raw=true)" />
+  <img src="https://github.com/RayRRT/ADCS/blob/main/assets/ESC6.png?raw=true)" />
 </p>
 
 How to abuse:
@@ -345,7 +345,7 @@ certipy req 'EvilCorp.local/TheHorseman:EvilCorp3.@EVILDC1.EvilCorp.local' -ca '
 Outside of certificate templates, a certificate authority itself has a set of permissions that secure various CA actions:
 
 <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/ESC7.png?raw=true)" />
+  <img src="https://github.com/RayRRT/ADCS/blob/main/assets/ESC7.png?raw=true)" />
 </p>
 
 From the security perspective it is necessary to care about the Manage CA (aka “CA Administrator”) and Manage Certificates (aka “Certificate Officer”) permissions.
@@ -381,7 +381,7 @@ certipy req 'EvilCorp.local/MCUser:EvilCorp3.@EVILDC1.EvilCorp.local' -ca 'EvilC
 AD CS supports several HTTP-based enrollment methods if additional server roles are installed (Certificate enrollment web service):
 
 <p align="center">
-  <img src="https://github.com/RayRRT/ADCS/blob/main/WebEnrollmentRelay.png?raw=true)" />
+  <img src="https://github.com/RayRRT/ADCS/blob/main/assets/WebEnrollmentRelay.png?raw=true)" />
 </p>
 
 How to abuse:
